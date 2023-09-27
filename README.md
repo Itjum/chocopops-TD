@@ -29,6 +29,10 @@ A video game with three.js
 - [X] : As a player, I want to see ennemy
 - [X] : As a player, I want to destroy ennemy when I shot them
 - [X] : As an ennemy, I want to move on one axe
-    (use the AWSD keys to move the enemy)
+        (View bonus, i interpreted this Task differently)
 - [X] : As a player, I want to decrease my life when I am touch by an ennemy
 - [X] : As a player, I want to decrease my life when I fall
+
+BONUS:
+Instead of moving on one axe the enemy can move in every direction !
+Play with a friend that uses the AWSD keys to move the enemy.
