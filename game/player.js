@@ -2,7 +2,7 @@ var Player = function(name, color, position, direction) {
 
     this.name = name;
     this.position = position;
-    this.life = 3;
+    this.life = 100;
     this.bullets = new Array();
     this.direction = direction;
     this.speed = 0;
@@ -22,9 +22,9 @@ var Player = function(name, color, position, direction) {
 
 Player.prototype.dead = function () {
     this.graphic.position.z = this.graphic.position.z-0.1;
-        //Nettoyage de la div container
-        $("#container").html("");
-        jQuery('#'+this.name+' >.life').text("Tu es mort !");
+    //Nettoyage de la div container
+    $("#container").html("");
+    jQuery('#'+this.name+' >.life').text("Tu es mort !");
         init();
 }
 

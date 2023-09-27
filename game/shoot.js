@@ -37,6 +37,8 @@ function collisions()
     bullet_collision();
     player_collision();
     player_falling();
+    bullet_collision_enemy();
+    player_collide_enemy();
 }
 
 function bullet_collision()
@@ -52,7 +54,31 @@ function bullet_collision()
             i--;
         }
     }
+}
 
+function player_collide_enemy()
+{
+     //collision between player and walls
+    if ((Math.abs(player1.graphic.position.x - enemy.graphic.position.x) <= 10) &&
+        (Math.abs(player1.graphic.position.y - enemy.graphic.position.y) <= 10)) {
+            player1.life -= 1;
+            if (player1.life <= 0)
+                player1.dead()
+        }
+}
+
+function bullet_collision_enemy()
+{
+    //collision between bullet and walls
+    for (var i = 0; i < player1.bullets.length; i++)
+    {
+        if ((Math.abs(player1.bullets[i].position.x - enemy.graphic.position.x) <= 10) &&
+            (Math.abs(player1.bullets[i].position.y - enemy.graphic.position.y) <= 10))
+        {
+            // kill enemy when hit enemy
+            enemy.dead();
+        }
+    }
 }
 
 function player_collision()
@@ -69,7 +95,6 @@ function player_collision()
         player1.graphic.position.y -= y;
     if ( y > HEIGHT )
         player1.graphic.position.y -= y - HEIGHT;
-
 }
 
 function player_falling()
@@ -95,7 +120,9 @@ function player_falling()
             && (y > tileY)
             && (y < mtileY))
         {
-           player1.dead();
+            player1.life -= 1
+            if (!!player1.life <= 0)
+                player1.dead();
         }
     }
 

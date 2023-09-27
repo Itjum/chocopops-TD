@@ -13,6 +13,15 @@ function update()
     if (keyboard.pressed("down"))
         player1.decelerate(moveDistance);
 
+    if (keyboard.pressed("a"))
+        enemy.turnLeft(rotateAngle);
+    if (keyboard.pressed("d"))
+        enemy.turnRight(rotateAngle);
+    if (keyboard.pressed("w"))
+        enemy.accelerate(moveDistance);
+    if (keyboard.pressed("s"))
+        enemy.decelerate(moveDistance);
+
     player1.move();
     controls.update();
 }
