@@ -14,12 +14,20 @@
         }
 
         #player1 {
-                margin : auto;
-                text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin : auto;
+            text-align: center;
+            align-items: center;
         }
 
         .life {
             color:white;
+        }
+
+        .enemy {
+            color: white;
         }
     </style>
 </head>
@@ -28,7 +36,8 @@
     <div id="container"></div>
     <div id="player1">
         <strong>Joueur 1</strong>
-        <span class="life">3</span> vies
+        <span class="life">100</span> vies
+        <span class="enemy">Press AWSD keys to move enemy</span>
     </div>
 </body>
 
