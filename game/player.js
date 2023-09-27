@@ -79,6 +79,7 @@ Player.prototype.move = function () {
     this.graphic.position.x = this.position.x;
     this.graphic.position.y = this.position.y;
 
+    // GIVES INFINITE LIGHT
     // light1.position.x = this.position.x;
     // light1.position.y = this.position.y;
     //li ght1.position.z = this.graphic.position.z + 500;
